@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookEasy - Online Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calendar-check"></i> BookEasy</h1>
+            <div class="header-controls">
+                <button id="toggleTheme" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button id="adminLogin" class="admin-btn">Admin Login</button>
+            </div>
+        </header>
+
+        <main>
+            <section id="bookingForm" class="booking-section">
+                <h2>Book Your Appointment</h2>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" required>
+                            <option value="">Choose a service...</option>
+                            <option value="haircut">Haircut</option>
+                            <option value="facial">Facial</option>
+                            <option value="manicure">Manicure</option>
+                            <option value="pedicure">Pedicure</option>
+                            <option value="massage">Massage</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Select Date</label>
+                        <input type="date" id="date" required min="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Select Time</label>
+                        <select id="time" required>
+                            <option value="">Choose a time...</option>
+                            <!-- Time slots will be populated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Special Notes (Optional)</label>
+                        <textarea id="notes" placeholder="Any special requirements or notes..."></textarea>
+                    </div>
+
+                    <button type="submit" class="book-btn">Book Appointment</button>
+                </form>
+            </section>
+
+            <section id="bookingConfirmation" class="confirmation-section hidden">
+                <h2>Booking Confirmation</h2>
+                <div class="confirmation-details">
+                    <!-- Confirmation details will be populated by JavaScript -->
+                </div>
+                <button id="newBooking" class="book-btn">Book Another Appointment</button>
+            </section>
+        </main>
+
+        <!-- Admin Login Modal -->
+        <div id="adminModal" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeAdminModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2>Admin Login</h2>
+                <form id="adminLoginForm" onsubmit="return handleAdminLogin(event)">
+                    <div class="form-group">
+                        <label for="adminUsername">Username</label>
+                        <input type="text" id="adminUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" required>
+                    </div>
+                    <div class="error-message" id="adminLoginError">
+                        Invalid username or password
+                    </div>
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <section id="adminDashboard" class="admin-section hidden">
+            <h2>Admin Dashboard</h2>
+            <div class="admin-controls">
+                <div class="search-box">
+                    <input type="text" id="searchBookings" placeholder="Search bookings...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-options">
+                    <select id="filterDate">
+                        <option value="all">All Dates</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                    <select id="filterStatus">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+            </div>
+            <div class="bookings-list">
+                <!-- Bookings will be populated by JavaScript -->
+            </div>
+            <button id="logoutAdmin" class="admin-btn">Logout</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
