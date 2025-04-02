@@ -2,7 +2,12 @@
 
 A modern, user-friendly online appointment booking system built with HTML, CSS, and JavaScript. BookEasy allows customers to schedule appointments and administrators to manage bookings efficiently.
 
-![BookEasy Screenshot](screenshot.png)
+
+
+![BookEasy Screenshot 1](https://github.com/user-attachments/assets/0d0cbbde-f108-42f9-8fb1-3fc989a17c4a)
+![BookEasy Screenshot 2](https://github.com/user-attachments/assets/bfc52bae-fc40-4c11-a524-39314c9dbdcc)
+
+
 
 ## Features
 
@@ -168,7 +173,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For support, please open an issue in the GitHub repository or contact the maintainers.
 
 ## Credits
-Created by [Your Name]
+Created by Rohit Bhendarkar
 
 ---
 
